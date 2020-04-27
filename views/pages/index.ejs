@@ -2,14 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' type='text/css' href='/styles/base.css'>
+  <%- include('../partials/headfiller') %>
   <title>Server parsed HTML Form</title>
 </head>
 <body>
   <h1>Search, this is home page</h1>
-  <a href='searches/new'>search</a>
-  <%- include('./partials/bookDisplay.ejs', { books }) %>
+  <a href='searches/new'>Search</a>
+  <ul></ul>
+    <% bookResults.forEach(book => { %>
+      <li><%= book.title %></li>
+    <% }) %>
+  </ul>
 </body>
 </html>
